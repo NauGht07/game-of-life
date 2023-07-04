@@ -1,0 +1,27 @@
+<button onclick="populate(20)">Generate</button>
+<button onclick="simulate()">Simulate</button>
+
+<div class="container"></div>
+
+<script src="main.js"></script>
+
+<style>
+    body{
+        background-color: black;
+    }
+    .container
+    {
+        --size: 4;
+        display: grid;
+        height: 800px;
+        width: 800px;
+        grid-template-columns: repeat(var(--size), 1fr);
+        grid-template-rows: repeat(var(--size), 1fr);
+        gap: 1px;
+    }
+
+    .pixel
+    {
+        background-color: rgba(128, 128, 128, 0.286);
+    }
+</style>
