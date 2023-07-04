@@ -7,3 +7,9 @@ Conway's Game of Life is a cellular automaton where cells on a grid evolve based
 
 # A Blinker in The Game Of Life (demo)
 ![game-of-life-gh](https://github.com/NauGht07/game-of-life/assets/85633605/81750460-aa04-4eae-aaeb-87da1c3615ca)
+
+<hr>
+
+# A Glider Gun in The Game Of Life (demo)
+
+![Untitled video - Made with Clipchamp](https://github.com/NauGht07/game-of-life/assets/85633605/bc385683-450c-4d8f-bd6e-cca8726720fc)
