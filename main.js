@@ -13,6 +13,7 @@ const container = document.querySelector('.container');
 // create the grid
 function populate(size)
 {
+    container.innerHTML = '';
     container.style.setProperty('--size', size)
     for (let i = 0; i < size * size; i++) {
         let div = document.createElement('div');
