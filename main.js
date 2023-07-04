@@ -42,11 +42,16 @@ function simulate() {
                 for (var k = i-1; k <= i+1; k++)
                 {
                     for (var l = j-1; l <= j+1; l++)
+                    {
+                        if (k == i && l == j) continue;
                         if (grid[k][l] == 1) ++count; // count number of live neighbouring cells
+                    }
                 }
             }
-            if (count == 3) ngrid[i][j] = 1;
+            if (count == 2 && ngrid[i][j] == 1) ngrid[i][j] = 1;
+            else if (count == 3) ngrid[i][j] = 1;
             else ngrid[i][j] = 0;
+            console.log("i, j" + i + j + "\n" + count);
             count = 0;
         }
     }
