@@ -3,6 +3,7 @@ let a; // grid size
 var grid = []; // grid currently
 let ngrid = []; // grid on the next tick
 
+
 // booleans for input
 let draw;
 let remove;
@@ -60,6 +61,22 @@ function simulate() {
     console.log(ngrid);
     output(ngrid);
 }
+
+function autoSimulate() {
+    var isGenerating = false;
+    var s;
+    return () => {
+        if (isGenerating) {
+            clearInterval(s);
+            isGenerating = false;
+        } else {
+            s = setInterval(simulate, 500);
+            isGenerating = true;
+        }
+    }
+}
+
+simulator = autoSimulate();
 
 // fetch the grid with its input
 function input()
