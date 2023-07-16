@@ -3,16 +3,21 @@ let a; // grid size
 var grid = []; // grid currently
 let ngrid = []; // grid on the next tick
 
+var isGenerating = false;
+var s;
+
 // booleans for input
 let draw;
 let remove;
-
 // div that contains the grid
 const container = document.querySelector('.container');
 
 // create the grid
-function populate(size)
+function populate()
 {
+    stopSimulate();
+    let size = document.getElementById('size').value;
+
     container.innerHTML = '';
     container.style.setProperty('--size', size)
     for (let i = 0; i < size * size; i++) {
@@ -56,11 +61,26 @@ function simulate() {
             count = 0;
         }
     }
-    
+
     console.log(ngrid);
     output(ngrid);
 }
 
+function startSimulate() {
+    speed = document.getElementById('speed').value;
+    s = setInterval(simulate, speed);
+    isGenerating = true;
+}
+
+function stopSimulate() {
+    clearInterval(s);
+    isGenerating = false;
+}
+
+function toggleSimulate() {
+    if (isGenerating) stopSimulate();
+    else startSimulate();
+}
 // fetch the grid with its input
 function input()
 {
