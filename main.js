@@ -61,23 +61,26 @@ function simulate() {
             count = 0;
         }
     }
-    
+
     console.log(ngrid);
     output(ngrid);
 }
 
 function startSimulate() {
-    if (isGenerating) return;
-    s = setInterval(simulate, 500);
+    speed = document.getElementById('speed').value;
+    s = setInterval(simulate, speed);
     isGenerating = true;
 }
 
 function stopSimulate() {
-    if (!isGenerating) return;
     clearInterval(s);
     isGenerating = false;
 }
 
+function toggleSimulate() {
+    if (isGenerating) stopSimulate();
+    else startSimulate();
+}
 // fetch the grid with its input
 function input()
 {
